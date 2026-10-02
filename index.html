@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#081526">
+<meta name="description" content="Mi Clima San Ramón">
+<link rel="manifest" href="manifest.json">
+<title>Mi Clima San Ramón</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+<div class="app">
+<header>
+  <div><b>🌦️ Mi Clima</b><small>San Ramón, Alajuela</small></div>
+  <button id="refresh">↻</button>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div id="place">📍 San Ramón, Alajuela</div>
+    <div id="temp" class="big">--°</div>
+    <div id="condition">Cargando...</div>
+    <div id="feels">Sensación --°C</div>
+    <div class="metrics">
+      <span>💧 <b id="humidity">--</b>%<small>Humedad</small></span>
+      <span>💨 <b id="wind">--</b><small>km/h</small></span>
+      <span>☀️ <b id="uv">--</b><small>UV</small></span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3>🌧️ ¿Se acerca la lluvia?</h3>
+    <p id="rainText">Calculando...</p>
+    <div class="bar"><i id="rainBar"></i></div>
+    <small>Máximo previsto: <b id="rainMax">--</b>%</small>
+  </section>
+
+  <h2>Próximas 24 horas</h2>
+  <div id="hours" class="hours"></div>
+
+  <h2>Pronóstico de 7 días</h2>
+  <div id="days"></div>
+</main>
+
+<main id="mapPage" class="hidden">
+  <div class="layers">
+    <button class="active" data-layer="normal">🗺️ Mapa</button>
+    <button data-layer="rain">🌧️ Lluvia</button>
+    <button data-layer="sat">🛰️ Satélite</button>
+  </div>
+  <div id="map"></div>
+  <p class="note">El radar representa precipitación observada recientemente. Puedes ampliar y mover el mapa.</p>
+</main>
+
+<nav>
+  <button id="homeBtn" class="selected">🏠<small>Clima</small></button>
+  <button id="mapBtn">🗺️<small>Mapa</small></button>
+</nav>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
