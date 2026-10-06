@@ -48,6 +48,7 @@ function setLayer(type){
   if(!map)return;
   [rainLayer,satLayer].forEach(x=>{if(x&&map.hasLayer(x))map.removeLayer(x)});
   if(type==="rain"&&rainLayer)rainLayer.addTo(map);
+  if(type==="sat"&&satLayer)satLayer.addTo(map);
   // A true satellite provider can be added later without changing the UI.
 }
 $("homeBtn").onclick=()=>{$("home").classList.remove("hidden");$("mapPage").classList.add("hidden");$("homeBtn").classList.add("selected");$("mapBtn").classList.remove("selected")};
