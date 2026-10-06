@@ -41,7 +41,7 @@ function initMap(){
       rainLayer=L.tileLayer(data.host+f.path+"/256/{z}/{x}/{y}/2/1_1.png",{opacity:.65,tileSize:256,maxZoom:10});
     }
   }).catch(()=>{});
-  satLayer=L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:"© OpenStreetMap contributors"});
+  satLayer=L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{attribution:"Tiles © Esri"})
   window.mapBase=base;
 }
 function setLayer(type){
